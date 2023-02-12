@@ -1,0 +1,14 @@
+CREATE OR REPLACE FUNCTION store_previous_30_days_data_and_delete_remaining()
+RETURNS TRIGGER AS $$
+BEGIN
+  INSERT INTO previous_30_days_data SELECT * FROM NEW WHERE created_at >= NOW() - INTERVAL '30 days';
+  DELETE FROM NEW WHERE created_at < NOW() - INTERVAL '30 days';
+  RETURN NULL;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER store_previous_30_days_data_and_delete_remaining_trigger
+AFTER INSERT
+ON your_table
+FOR EACH ROW
+EXECUTE FUNCTION store_previous_30_days_data_and_delete_remaining();
