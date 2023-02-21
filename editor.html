@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script>
+      tinymce.init({
+        selector: '#mytextarea',
+        plugins: [
+    'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+    'searchreplace', 'wordcount', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media',
+    'table', 'emoticons', 'template', 'help'
+  ],
+  toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
+    'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
+    'forecolor backcolor emoticons | help',
+  menu: {
+    favs: { title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons' }
+  },
+  menubar: 'favs file edit view insert format tools table help',
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+      });
+    </script>
+
+  </head>
+
+  <body>
+  <h1>TinyMCE Quick Start Guide</h1>
+    <form method="post">
+      <textarea id="mytextarea">
+<table width='100%' cellpadding='0' cellspacing='0' border='0' valign='top' align='center' style='font-size:12px;color:#000;font-family: Verdana,Geneva,sans-serif; border:1px #336699 solid;'> <tbody> <tr> <td bgcolor='#336699' style='padding:0px;'> <table bgcolor='#ffffff' width='100%' cellpadding='0' cellspacing='0' border='0'> <tbody> <tr> <td width='60%' style='padding:5px 10px;text-align:left;padding-left:10px'><img alt='logo' height='50' src='<%=logo%>'></td></tr></tbody> </table> <table bgcolor='white' width='100%' cellpadding='0' cellspacing='0' border='0' style='padding:0px;color:#000000;font-size:12px;font-family:Verdana,Geneva,sans-serif;'> <tbody> <tr> <td style='padding:20px 15px 10px 15px;'>Dear <span style='font-weight:600;'><%=spUsername%></span>,</td></tr><tr> <td style='padding:10px 15px 0px 15px;'>Incident Ticket has been assigned to you. Please take necessary actions.</td></tr><tr> <td style='padding:10px 15px 0px 15px;'>Additional details about the ticket are given below:-</td></tr><tr> <td style='padding:0px 20px 10px 20px;'> <table width='100%' cellpadding='0' cellspacing='0' border='0' style='padding:0px;color:#000000;font-size:12px;font-family:Verdana,Geneva,sans-serif;'> <tbody> <tr> <td style='padding:10px 15px 0px 15px;'>Ticket ID: <span style='font-weight:600;'> <%=orderNumber%> / <%=breakfixNumber%></span></td></tr><tr> <td style='padding:10px 15px 0px 15px;'>Priority: <span style='font-weight:600;'><%=priorityId%></span></td></tr><tr> <td style='padding:10px 15px 0px 15px;'>Reported On: <span style='font-weight:600;'><%=createdOnGMT%></span></td></tr><tr> <td style='padding:10px 15px 0px 15px;'>Impacted Service or Impacted CI: <span style='font-weight:600;'><%=serviceName%></span></td></tr><tr> <td style='padding:10px 15px 0px 15px;'>Issue Description: <span style='font-weight:600;'><%=description%></span></td></tr></tbody> </table> </td></tr><tr> <td style='padding:10px 15px 0px 15px;'>You may navigate to Incident Workitem board on the<a href=\"<%=appLink%>\"><%=portalName%></a> to review complete ticket details and resolve the issue. </td></tr><tr> <td style='padding:10px 15px 0px 15px;'>Best Regards,</td></tr><tr> <td style='padding:0px 15px 15px 15px;'><%=Signature%></td></tr><tr> <td style='padding:0px 5px 10px 15px;color:#FF0000;'><b><%=otherInfo%></b> </td></tr><tr> <td width='100%' style='text-align:left;'> <img height='100' width='100%' src='<%=footerImg%>'></td></tr></tbody> </table> <table width='100%' cellpadding='0' cellspacing='0' border='0'> <tbody> <tr> <td align='center' bgcolor='#336699' style='padding:10px 15px;color:#fff;font-size:10px;font-family:Verdana,Geneva,sans-serif;'><%=footer%> </td></tr></tbody> </table> </td></tr></tbody></table>
+        
+      </textarea>
+    </form>
+  </body>
+</html>
