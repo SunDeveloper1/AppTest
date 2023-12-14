@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "a7d01b59-8a5d-4afe-ad4c-73a799013369",
+		"name": "Song",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30951355"
+	},
+	"item": [
+		{
+			"name": "GetAllSongs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/song/v1/api",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"song",
+						"v1",
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllSongs Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/song/v1/api/4",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"song",
+						"v1",
+						"api",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Plays",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"song_id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/song/v1/plays",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"song",
+						"v1",
+						"plays"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Feedback",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\":13,\r\n    \"creator_id\":1,\r\n    \"comment\":\"Love This Song\",\r\n    \"rating\":1,\r\n    \"song_id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/feedback/v1/register",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"feedback",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Album",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Love hate\",\r\n    \"description\":\"This is a popular album\",\r\n    \"imageURL\":\"http://image.url.com\",\r\n    \"user_id\":1,\r\n    \"creator_id\":17,\r\n    \"creator_name\":\"dev\",\r\n    \"comment\":\"Love This Song\",\r\n    \"rating\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/album/v1/register",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"album",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Playlist",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Yo YO Vivek Paaji\",\r\n    \"description\":\"This is a popular album\",\r\n    \"creator_id\":1,\r\n    \"creator_name\":\"Vivek Singh Rao\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/song/v1/playlist",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"song",
+						"v1",
+						"playlist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Map Song Playlist",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\":1,\r\n    \"playlist_id\":1,\r\n    \"song_id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/song/v1/map",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"song",
+						"v1",
+						"map"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Album By CreatorId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/album/v1/list/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"album",
+						"v1",
+						"list",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Playlist By CreatorId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/song/v1/playlist/list/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"song",
+						"v1",
+						"playlist",
+						"list",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Like Upsert",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\":17,\r\n    \"song_id\":2,\r\n    \"is_liked\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/like/v1/upsert",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"like",
+						"v1",
+						"upsert"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
