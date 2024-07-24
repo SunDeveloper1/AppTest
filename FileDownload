@@ -1,0 +1,79 @@
+'use client'
+
+import React from 'react'
+
+const votes = [
+    {
+      "Unnamed: 0": 167321,
+      "ST_NAME": "KERALA",
+      "YEAR": 1957,
+      "AC": "1 PARASSALA",
+      "CANDIDATE": "1 KUNJUKRISHNAN NADAR M.",
+      "SEX": "M",
+      "AGE": null,
+      "CATEGORY": null,
+      "PARTY": "INC",
+      "VOTES": 16742
+    },
+    {
+      "Unnamed: 0": 167322,
+      "ST_NAME": "KERALA",
+      "YEAR": 1957,
+      "AC": "1 PARASSALA",
+      "CANDIDATE": "2 KRISHNA PILLAI K.",
+      "SEX": "M",
+      "AGE": null,
+      "CATEGORY": null,
+      "PARTY": "PSP",
+      "VOTES": 8338
+    },
+    {
+      "Unnamed: 0": 167323,
+      "ST_NAME": "KERALA",
+      "YEAR": 1957,
+      "AC": "1 PARASSALA",
+      "CANDIDATE": "3 STUART.",
+      "SEX": "M",
+      "AGE": null,
+      "CATEGORY": null,
+      "PARTY": "IND",
+      "VOTES": 5831
+    },
+    {
+      "Unnamed: 0": 167324,
+      "ST_NAME": "KERALA",
+      "YEAR": 1957,
+      "AC": "1 PARASSALA",
+      "CANDIDATE": "4 RETNASWAMY N.",
+      "SEX": "M",
+      "AGE": null,
+      "CATEGORY": null,
+      "PARTY": "CPI",
+      "VOTES": 5816
+    }
+];
+
+
+
+function page() {
+
+    const handleDownload=()=>{
+        
+        const jsonBlob = new Blob([JSON.stringify(votes, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(jsonBlob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'votes.json';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+    }
+  return (
+    <div>
+         <button onClick={handleDownload}>Download</button>
+    </div>
+  )
+}
+
+export default page
